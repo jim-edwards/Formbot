@@ -1,2 +1,5 @@
-# Formbot
-Collection of Formbot 3d Printer material and details (T-Rex 2+)
+# Formbot 3D Printers
+
+Formbot 3d Printer documentation, projects and useful information
+
+Please start at the Wiki found here: [Wiki](../../wiki)
