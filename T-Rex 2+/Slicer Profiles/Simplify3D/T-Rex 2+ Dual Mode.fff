@@ -1,11 +1,27 @@
 <?xml version="1.0"?>
-<profile name="T-Rex 2+ Dual Extruder(Left)" version="2017-06-07 21:13:44" app="S3D-Software 4.0.0">
+<profile name="T-Rex 2+ Dual Mode" version="2018-02-13 20:35:04" app="S3D-Software 4.0.0">
   <baseProfile>Default</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>Medium</printQuality>
   <printExtruders></printExtruders>
-  <extruder name="Extruder 1">
+  <extruder name="Left Extruder">
     <toolheadNumber>0</toolheadNumber>
+    <diameter>0.4</diameter>
+    <autoWidth>0</autoWidth>
+    <width>0.4</width>
+    <extrusionMultiplier>0.9</extrusionMultiplier>
+    <useRetract>1</useRetract>
+    <retractionDistance>3</retractionDistance>
+    <extraRestartDistance>0</extraRestartDistance>
+    <retractionZLift>0</retractionZLift>
+    <retractionSpeed>1800</retractionSpeed>
+    <useCoasting>0</useCoasting>
+    <coastingDistance>0.2</coastingDistance>
+    <useWipe>0</useWipe>
+    <wipeDistance>5</wipeDistance>
+  </extruder>
+  <extruder name="Right Extruder">
+    <toolheadNumber>1</toolheadNumber>
     <diameter>0.4</diameter>
     <autoWidth>0</autoWidth>
     <width>0.4</width>
@@ -70,9 +86,9 @@
   <internalInfillAngles>45,-45</internalInfillAngles>
   <overlapInternalInfillAngles>0</overlapInternalInfillAngles>
   <externalInfillAngles>45,-45</externalInfillAngles>
-  <generateSupport>0</generateSupport>
-  <supportExtruder>0</supportExtruder>
-  <supportInfillPercentage>30</supportInfillPercentage>
+  <generateSupport>1</generateSupport>
+  <supportExtruder>1</supportExtruder>
+  <supportInfillPercentage>20</supportInfillPercentage>
   <supportExtraInflation>0</supportExtraInflation>
   <supportBaseLayers>0</supportBaseLayers>
   <denseSupportExtruder>0</denseSupportExtruder>
@@ -86,7 +102,7 @@
   <supportGridSpacing>4</supportGridSpacing>
   <maxOverhangAngle>45</maxOverhangAngle>
   <supportAngles>0</supportAngles>
-  <temperatureController name="Extruder 1 Temperature">
+  <temperatureController name="Left Extruder Temperature">
     <temperatureNumber>0</temperatureNumber>
     <isHeatedBed>0</isHeatedBed>
     <relayBetweenLayers>0</relayBetweenLayers>
@@ -94,7 +110,7 @@
     <stabilizeAtStartup>1</stabilizeAtStartup>
     <setpoint layer="1" temperature="190"/>
   </temperatureController>
-  <temperatureController name="Extruder 2 Temperatrue">
+  <temperatureController name="Right Extruder Temperature">
     <temperatureNumber>1</temperatureNumber>
     <isHeatedBed>0</isHeatedBed>
     <relayBetweenLayers>0</relayBetweenLayers>
@@ -110,10 +126,10 @@
   <adjustSpeedForCooling>1</adjustSpeedForCooling>
   <minSpeedLayerTime>15</minSpeedLayerTime>
   <minCoolingSpeedSlowdown>20</minCoolingSpeedSlowdown>
-  <increaseFanForCooling>0</increaseFanForCooling>
+  <increaseFanForCooling>1</increaseFanForCooling>
   <minFanLayerTime>45</minFanLayerTime>
   <maxCoolingFanSpeed>100</maxCoolingFanSpeed>
-  <increaseFanForBridging>0</increaseFanForBridging>
+  <increaseFanForBridging>1</increaseFanForBridging>
   <bridgingFanSpeed>100</bridgingFanSpeed>
   <use5D>1</use5D>
   <relativeEdistances>0</relativeEdistances>
@@ -153,7 +169,7 @@
   <endingGcode>G28 X0 Y0,M104 S0 T1 ; turn off extruder,M104 S0 T0,M140 S0 ; turn off bed,G28 X0,M106 S127,M84 ; disable motors</endingGcode>
   <exportFileFormat>gcode</exportFileFormat>
   <celebration>0</celebration>
-  <celebrationSong>Random Song</celebrationSong>
+  <celebrationSong>Star Wars</celebrationSong>
   <postProcessing></postProcessing>
   <defaultSpeed>3600</defaultSpeed>
   <outlineUnderspeed>0.5</outlineUnderspeed>
@@ -189,7 +205,7 @@
   <maxMovementDetourFactor>3</maxMovementDetourFactor>
   <toolChangeRetractionDistance>35</toolChangeRetractionDistance>
   <toolChangeExtraRestartDistance>-0.5</toolChangeExtraRestartDistance>
-  <toolChangeRetractionSpeed>600</toolChangeRetractionSpeed>
+  <toolChangeRetractionSpeed>2400</toolChangeRetractionSpeed>
   <externalThinWallType>0</externalThinWallType>
   <internalThinWallType>2</internalThinWallType>
   <thinWallAllowedOverlapPercentage>10</thinWallAllowedOverlapPercentage>
@@ -199,14 +215,7 @@
   <singleExtrusionEndpointExtension>0.2</singleExtrusionEndpointExtension>
   <horizontalSizeCompensation>0</horizontalSizeCompensation>
   <autoConfigureMaterial name="PLA">
-    <temperatureController name="Extruder 1 Temperature">
-      <temperatureNumber>0</temperatureNumber>
-      <isHeatedBed>0</isHeatedBed>
-      <relayBetweenLayers>0</relayBetweenLayers>
-      <relayBetweenLoops>0</relayBetweenLoops>
-      <stabilizeAtStartup>1</stabilizeAtStartup>
-      <setpoint layer="1" temperature="190"/>
-    </temperatureController>
+    <globalExtruderTemperature>190</globalExtruderTemperature>
     <globalBedTemperature>60</globalBedTemperature>
     <globalExtrusionMultiplier>0.9</globalExtrusionMultiplier>
     <fanSpeed>
@@ -239,6 +248,24 @@
       <setpoint layer="1" speed="0"/>
     </fanSpeed>
   </autoConfigureMaterial>
+  <autoConfigureMaterial name="PLA (left) HIPS (right)">
+    <extruder name="Right Extruder">
+      <extrusionMultiplier>0.9</extrusionMultiplier>
+    </extruder>
+    <extruder name="Left Extruder">
+      <extrusionMultiplier>0.9</extrusionMultiplier>
+    </extruder>
+    <temperatureController name="Right Extruder Temperature">
+      <setpoint layer="1" temperature="230"/>
+    </temperatureController>
+    <temperatureController name="Left Extruder Temperature">
+      <setpoint layer="1" temperature="190"/>
+    </temperatureController>
+    <fanSpeed>
+      <setpoint layer="1" speed="50"/>
+      <setpoint layer="10" speed="100"/>
+    </fanSpeed>
+  </autoConfigureMaterial>
   <autoConfigureQuality name="Fast">
     <layerHeight>0.3</layerHeight>
     <topSolidLayers>3</topSolidLayers>
@@ -253,7 +280,7 @@
     <bottomSolidLayers>3</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
     <infillPercentage>10</infillPercentage>
-    <supportInfillPercentage>30</supportInfillPercentage>
+    <supportInfillPercentage>20</supportInfillPercentage>
   </autoConfigureQuality>
   <autoConfigureQuality name="High">
     <layerHeight>0.1</layerHeight>
