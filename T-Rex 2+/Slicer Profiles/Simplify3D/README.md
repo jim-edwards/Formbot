@@ -7,11 +7,11 @@ These 2 profiles are intended to be used in Simplify 3D using the multi-object p
  
 1.  Create a process for each extruder.  Select a different extruder (Left/Right) for each process.
 
-[[/docs/images/Simplify3D_MultiProcess_1.png|Select nozzle]]
+![Select nozzle](../../../docs/images/Simplify3D_MultiProcess_1.png?raw=true)
 
 2.  Select which model parts to print with this nozzle (CTRL/SHIFT to select multiple).
- 
-[[/docs/images/Simplify3D_MultiProcess_2.png|Select models]]
+
+![Select models](../../../docs/images/Simplify3D_MultiProcess_2.png?raw=true)
 
 ## T-Rex 2+ Dual Mode.fff
 
