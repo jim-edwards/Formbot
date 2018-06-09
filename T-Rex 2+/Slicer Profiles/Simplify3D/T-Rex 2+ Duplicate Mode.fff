@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<profile name="T-Rex 2+ Duplicate Mode" version="2018-02-13 20:35:04" app="S3D-Software 4.0.0">
+<profile name="T-Rex 2+ Duplicate Mode" version="2018-06-08 21:09:54" app="S3D-Software 4.0.0">
   <baseProfile>Default</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>Medium</printQuality>
   <printExtruders></printExtruders>
-  <extruder name="Extruder 1">
+  <extruder name="Both Extruders">
     <toolheadNumber>0</toolheadNumber>
     <diameter>0.4</diameter>
     <autoWidth>0</autoWidth>
@@ -93,6 +93,14 @@
     <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>1</stabilizeAtStartup>
     <setpoint layer="1" temperature="190"/>
+  </temperatureController>
+  <temperatureController name="Bed Temperature">
+    <temperatureNumber>0</temperatureNumber>
+    <isHeatedBed>1</isHeatedBed>
+    <relayBetweenLayers>0</relayBetweenLayers>
+    <relayBetweenLoops>0</relayBetweenLoops>
+    <stabilizeAtStartup>1</stabilizeAtStartup>
+    <setpoint layer="1" temperature="60"/>
   </temperatureController>
   <fanSpeed>
     <setpoint layer="1" speed="50"/>

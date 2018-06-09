@@ -94,6 +94,14 @@
     <stabilizeAtStartup>1</stabilizeAtStartup>
     <setpoint layer="1" temperature="190"/>
   </temperatureController>
+  <temperatureController name="Bed Temperature">
+    <temperatureNumber>0</temperatureNumber>
+    <isHeatedBed>1</isHeatedBed>
+    <relayBetweenLayers>0</relayBetweenLayers>
+    <relayBetweenLoops>0</relayBetweenLoops>
+    <stabilizeAtStartup>1</stabilizeAtStartup>
+    <setpoint layer="1" temperature="60"/>
+  </temperatureController>
   <fanSpeed>
     <setpoint layer="1" speed="50"/>
     <setpoint layer="10" speed="100"/>

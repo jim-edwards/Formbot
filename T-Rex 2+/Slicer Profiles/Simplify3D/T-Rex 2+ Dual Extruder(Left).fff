@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<profile name="T-Rex 2+ Dual Extruder(Left)" version="2017-06-07 21:13:44" app="S3D-Software 4.0.0">
+<profile name="T-Rex 2+ Dual Extruder(Left)" version="2018-06-08 21:09:54" app="S3D-Software 4.0.0">
   <baseProfile>Default</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>Medium</printQuality>
   <printExtruders></printExtruders>
-  <extruder name="Extruder Left">
+  <extruder name="Left Extruder">
     <toolheadNumber>0</toolheadNumber>
     <diameter>0.4</diameter>
     <autoWidth>0</autoWidth>
@@ -94,13 +94,13 @@
     <stabilizeAtStartup>1</stabilizeAtStartup>
     <setpoint layer="1" temperature="190"/>
   </temperatureController>
-  <temperatureController name="Right Extruder Temperature">
-    <temperatureNumber>1</temperatureNumber>
-    <isHeatedBed>0</isHeatedBed>
+  <temperatureController name="Bed Temperature">
+    <temperatureNumber>0</temperatureNumber>
+    <isHeatedBed>1</isHeatedBed>
     <relayBetweenLayers>0</relayBetweenLayers>
     <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>1</stabilizeAtStartup>
-    <setpoint layer="1" temperature="190"/>
+    <setpoint layer="1" temperature="60"/>
   </temperatureController>
   <fanSpeed>
     <setpoint layer="1" speed="50"/>

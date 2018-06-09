@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<profile name="T-Rex 2+ Dual Mode" version="2018-02-13 20:35:04" app="S3D-Software 4.0.0">
+<profile name="T-Rex 2+ Dual Mode" version="2018-06-08 21:09:54" app="S3D-Software 4.0.0">
   <baseProfile>Default</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>Medium</printQuality>
@@ -118,6 +118,14 @@
     <stabilizeAtStartup>1</stabilizeAtStartup>
     <setpoint layer="1" temperature="190"/>
   </temperatureController>
+  <temperatureController name="Bed Temperature">
+    <temperatureNumber>0</temperatureNumber>
+    <isHeatedBed>1</isHeatedBed>
+    <relayBetweenLayers>0</relayBetweenLayers>
+    <relayBetweenLoops>0</relayBetweenLoops>
+    <stabilizeAtStartup>1</stabilizeAtStartup>
+    <setpoint layer="1" temperature="60"/>
+  </temperatureController>
   <fanSpeed>
     <setpoint layer="1" speed="50"/>
     <setpoint layer="10" speed="100"/>
@@ -162,7 +170,7 @@
   <baudRateOverride>250000</baudRateOverride>
   <overridePrinterModels>0</overridePrinterModels>
   <printerModelsOverride></printerModelsOverride>
-  <startingGcode>M605 S1,T0,G28 ; home all axes,M420 S1,G1 X-42 F8000,G92 E0,G1 E5 F500,G1 X0 F5000,G1 X-40,G1 X0,G1 X-40,G1 X0,G1 X-40,G1 X150 ,G1 Y200 F5000</startingGcode>
+  <startingGcode>M605 S1            ; Set dual carriage mode S0 slicer full control | S1 AutoPark inactive head | S2 duplicate,T0                     ; Select Tool 0,G28                   ; home all axes,M420 S1            ; Enable bed leveling compensation using current grid/mesh,G1 X-42 F8000  ; park T0 head at X=-42,G92 E0              ; Zero extruder count,,G1 E5 F500      ; Prime the nozzle 5m,,G1 X0 F5000    ; Begin Scrub,G1 X-40             ,G1 X0,G1 X-40,G1 X0,G1 X-40,G1 X150            ;End Scrub,,T1                     ; Select Tool 1,G1 X440 F8000  ; park T0 head at X=440,G92 E0              ; Zero extruder count,,G1 E5 F500      ; Prime the nozzle 5m,,G1 X0 F5000    ; Begin Scrub,G1 X440            ,G1 X400,G1 X440,G1 X400,G1 X440,G1 X400            ;End Scrub</startingGcode>
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
@@ -249,6 +257,7 @@
     </fanSpeed>
   </autoConfigureMaterial>
   <autoConfigureMaterial name="PLA (left) HIPS (right)">
+    <globalBedTemperature>60</globalBedTemperature>
     <extruder name="Right Extruder">
       <extrusionMultiplier>0.9</extrusionMultiplier>
     </extruder>
